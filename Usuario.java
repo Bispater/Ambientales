@@ -1,14 +1,13 @@
 
 public class Usuario {
     
-    //metodos
+    //Atributos
     private String Nombres;
     private String Apellidos;
     private int Edad;
     private int Rut;
     private String Email;
     private String Ciudad;
-    private String Pais;
     
     //Accesores
     public String getNombres() {
@@ -33,10 +32,6 @@ public class Usuario {
   
     public String getCiudad() {
         return Ciudad;
-    }
-  
-    public String getPais() {
-        return Pais;
     }
   
     
@@ -64,16 +59,13 @@ public class Usuario {
     public void setCiudad(String Ciudad) {
         this.Ciudad = Ciudad;
     }
+
   
-    public void setPais(String Pais) {
-        this.Pais = Pais;
-    }
-    
-    
-    //comportamientos 
+    //comportamientos CRUD
     
     public void CrearUsuario(Usuario Objeto){
-        
+
+      
         System.out.println("Nombres:"+ Objeto.Nombres);
         System.out.println("Apellidos:"+ Objeto.Apellidos);
         System.out.println("Rut:"+ Objeto.Rut);
@@ -81,19 +73,17 @@ public class Usuario {
         
     }
     
-    public void LeerEstudiante(int Rut){
+    public void BuscarUsuario(int Rut){
         System.out.println("Buscar Usuario "+ Rut);
     }
     
-    public void ActualizarEstudiante (int Rut){
+    public void ActualizarUsuario (int Rut){
         System.out.println("Modificando al usuario "+ Rut);
     }
     
-    public void EliminarEstudiante (int Rut){
+    public void EliminarUsuario (int Rut){
         System.out.println("Se ha eliminado el "+ Rut);
     }
-    
-    
     
     
 }
