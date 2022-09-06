@@ -1,4 +1,3 @@
-//package Principal;
 import java.util.Scanner;
 public class Usuario {
     //Atributos

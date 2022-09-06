@@ -1,5 +1,3 @@
-package org.example;
-
 import java.util.Scanner;
 
 public class Admin {
@@ -11,21 +9,20 @@ public class Admin {
     Scanner entrada = new Scanner(System.in);
 
     //Constructores
-    public Admin(String nombres, int id, String contrasenia) {
-        this.Nombres = nombres;
-        this.id = id;
-        this.Contrasenia = contrasenia;
+    public Admin() {
+        this.Nombres = "";
+        this.id = -1;
+        this.Contrasenia = "";
     }
 
-    public void Admin( int Id  )
+    public void CrearAdmin( int Id  )
     {
-       System.out.println("Inserte nombre de admin");
-       this.Nombres= entrada.next();
-       this.id=Id ;
-       this.Contrasenia=entrada.next();
-
-
+        System.out.println("Inserte nombre de admin");
+        this.Nombres= entrada.next();
+        this.id=Id ;
+        this.Contrasenia=entrada.next();
     }
+
 
       //Geters y setters 
     public String getNombres() {
