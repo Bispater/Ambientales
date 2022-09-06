@@ -1,5 +1,7 @@
+import java.util.Scanner;
 public class PuntoReciclaje {
-
+    Scanner leer = new Scanner(System.in);
+  
     //Atributos
     private String Direccion;
     private boolean Habilitado;
@@ -12,19 +14,19 @@ public class PuntoReciclaje {
   
     //Accesores
     public String getDireccion() {
-        return Direccion;
+        return this.Direccion;
     }
     public boolean getHabilitado() {
-        return Habilitado;
+        return this.Habilitado;
     }
     public String getTipoReciclaje() {
-        return TipoReciclaje;
+        return this.TipoReciclaje;
     }
     public int getCapacidad() {
-        return Capacidad;
+        return this.Capacidad;
     }
     public int getPeriodoVaciado(){
-      return PeriodoVaciado;
+        return this.PeriodoVaciado;
     }
 
   
@@ -46,26 +48,29 @@ public class PuntoReciclaje {
   }
 
   //Comportamientos
-  public void CrearPuntoReciclaje(PuntoReciclaje Objeto){
-        
-        System.out.println("Direccion: "+ Objeto.Direccion);
-        System.out.println("Tipo Reciclaje:"+ Objeto.TipoReciclaje);
-        System.out.println("Capacidad :"+ Objeto.Capacidad);
-        System.out.println("Periodo de vaciado :"+ Objeto.PeriodoVaciado);
-        
-    }
-    
-    public void BuscarPuntoReciclaje(String Direccion){
-        System.out.println("Buscar Punto Reciclaje "+ Direccion);
+    public void CrearPuntoReciclaje(){
+
+        System.out.println("Direccion: ");
+        this.setDireccion(leer.nextLine());
+        System.out.println("Tipo Reciclaje:");
+        this.setTipoReciclaje(leer.nextLine());
+        System.out.println("Capacidad :");
+        this.setCapacidad(leer.nextInt());
+        System.out.println("Periodo de vaciado :");
+        this.setCapacidad(leer.nextInt());
     }
 
-  /* ACTUALIZAR PUNTO RECICLAJE
-    public void ActualizarPuntoReciclaje (PuntoReciclaje Objeto){
-        System.out.println("Modificando Punto Reciclaje "+ Objeto);
+    public void BuscarPuntoReciclaje(){
+        System.out.println("Buscar Punto Reciclaje ");
     }
-    */
-    public void EliminarPuntoReciclaje (int Rut){
-        System.out.println("Se ha eliminado el "+ Rut);
+
+    /* ACTUALIZAR PUNTO RECICLAJE
+      public void ActualizarPuntoReciclaje (PuntoReciclaje Objeto){
+          System.out.println("Modificando Punto Reciclaje "+ Objeto);
+      }
+      */
+    public void EliminarPuntoReciclaje (){
+        System.out.println("Se ha eliminado el ");
     }
-  
+
 }
