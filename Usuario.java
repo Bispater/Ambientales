@@ -70,7 +70,7 @@ public class Usuario {
     }
 
     //comportamientos CRUD
-    public void CrearUsuario(){
+    public void CrearUsuario(){ //Leer datos usuario
         System.out.print("Nombres: ");
         this.setNombres(leer.nextLine());
         System.out.print("Apellidos:");
@@ -87,10 +87,6 @@ public class Usuario {
 
     public void BuscarUsuario(String Rut){
         System.out.println("Buscar Usuario "+ Rut);
-    }
-
-    public void ActualizarUsuario (String Rut){
-        System.out.println("Modificando al usuario "+ Rut);
     }
 
     public void EliminarUsuario (String Rut){

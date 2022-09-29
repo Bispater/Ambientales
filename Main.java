@@ -10,11 +10,15 @@ public class Main {
     //entrada = new Scanner(System.in);
     
     //COLECCIÓN DE USUARIOS, PUNTOS DE RECICLAJE Y ADMINISTRADOR;
+    ArrayListo<Ciudades> ciudades = 
     ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
-    ArrayList<PuntoReciclaje> puntosDeReciclajes = new ArrayList<PuntoReciclaje>();
+  
     ArrayList<Admin> admins = new ArrayList<Admin>();
+
+    /*  Admin admin1 = new Admin() ; 
+      admin1.CrearAdmin();
+      admins.add(admin1) ;*/
     
-   
     MenuPrincipal();
 
   public static int buscarUsuario(ArrayList<Usuario> usuarios) {
@@ -44,14 +48,9 @@ public class Main {
       if (usuarios.get(i).getNombres() == nombreBuscar) {
         usuarioAcambiar = usuarios.get(i);
         return 1;
-
       }
 
     }
-
     return 0;
   }
-
-
-
 }

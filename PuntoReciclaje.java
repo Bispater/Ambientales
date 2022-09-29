@@ -10,6 +10,7 @@ public class PuntoReciclaje {
     private int Capacidad; 
     // PERÍODO DE VACIADO (LIMPIEZA DEL PUNTO DE RECICLAJE) EN DÍAS
     private int PeriodoVaciado;
+    private String Ciudad;
 
   
     //Accesores
@@ -28,6 +29,9 @@ public class PuntoReciclaje {
     public int getPeriodoVaciado(){
         return this.PeriodoVaciado;
     }
+    public String getCiudad(){
+      return this.Ciudad;
+    }
 
   
   //Mutadores
@@ -45,6 +49,9 @@ public class PuntoReciclaje {
   }
     public void setPeriodoVaciado(int PeriodoVaciado){
     this.PeriodoVaciado = PeriodoVaciado;
+  }
+  public void setCiudad(String ciudad){
+    this.Ciudad = ciudad;
   }
 
   //Comportamientos

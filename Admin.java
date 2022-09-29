@@ -1,39 +1,44 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+
 public class Admin {
-    //Atributos
-    private String Nombres;
-    private int id ;
-    private String Contrasenia;
+  // Atributos
+  private String Nombres;
+  private int id;
+  private String Contrasenia;
 
-    Scanner entrada = new Scanner(System.in);
+  Scanner entrada = new Scanner(System.in);
 
-    //Constructores
-    public Admin() {
-        this.Nombres = "";
-        this.id = -1;
-        this.Contrasenia = "";
+  // Constructores
+  public Admin() {
+    this.Nombres = "";
+    this.id = -1;
+    this.Contrasenia = "";
+  }
+
+  // Comportamientos
+  public void CrearAdmin() {
+    Admin admin1 = new Admin();
+    System.out.println("Inserte nombre de admin");
+    this.Nombres = entrada.next();
+    System.out.println("Inserte ID:");
+    this.id = entrada.nextInt();
+    System.out.println("Ingrese contraseña:");
+    this.Contrasenia = entrada.next();
+
+    // Agregar administrador al ArrayList
+    admins.add(admin1);
+  }
+
+  public boolean validarAdministrador(Admin admins, int id, String contrasenia) {
+    if ((admins.Contrasenia == contrasenia) & (admins.id == id)) {
+      System.out.println("Ingreso Exitoso");
+      return true;
     }
+    return false;
+  }
 
-    //Comportamientos
-    public void CrearAdmin(){
-        System.out.println("Inserte nombre de admin");
-        this.Nombres= entrada.next();
-        System.out.println("Inserte ID:");
-        this.id=entrada.nextInt();
-        System.out.println("Ingrese contraseña:");
-        this.Contrasenia=entrada.next();
-    }
-  
-    public boolean validarAdministrador(Admin admins, int id, String contrasenia){
-      if((admins.Contrasenia == contrasenia)&(admins.id == id)){
-        System.out.println("Ingreso Exitoso");
-        return true;
-      }
-      return false;
-    }
-
-    public static int agregarUsuario(ArrayList<Usuario> usuarios) {
+  public int agregarUsuario(ArrayList<Usuario> usuarios) {
     int i;
     Usuario usuarioNuevo = new Usuario();
     usuarioNuevo.CrearUsuario();
@@ -46,29 +51,28 @@ public class Admin {
     return 0;
   }
 
-    //Geters y setters 
-    public String getNombres() {
-        return Nombres;
-    }
+  // Geters y setters
+  public String getNombres() {
+    return Nombres;
+  }
 
-    public void setNombres(String nombres) {
-        Nombres = nombres;
-    }
+  public void setNombres(String nombres) {
+    Nombres = nombres;
+  }
 
-    public int getId() {
-        return id;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public String getContrasenia() {
-        return this.Contrasenia;
-    }
+  public String getContrasenia() {
+    return this.Contrasenia;
+  }
 
-    public void setContrasenia(String contrasenia) {
-      this.Contrasenia = contrasenia;
-    }
+  public void setContrasenia(String contrasenia) {
+    this.Contrasenia = contrasenia;
+  }
 }
-
