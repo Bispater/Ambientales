@@ -2,77 +2,102 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Admin {
-  // Atributos
-  private String Nombres;
-  private int id;
-  private String Contrasenia;
+    // Atributos
+    private String Nombres;
+    private int id;
+    private String Contrasenia;
 
-  Scanner entrada = new Scanner(System.in);
+    Scanner entrada = new Scanner(System.in);
 
-  // Constructores
-  public Admin() {
-    this.Nombres = "";
-    this.id = -1;
-    this.Contrasenia = "";
-  }
-
-  // Comportamientos
-  public void CrearAdmin() {
-    Admin admin1 = new Admin();
-    System.out.println("Inserte nombre de admin");
-    this.Nombres = entrada.next();
-    System.out.println("Inserte ID:");
-    this.id = entrada.nextInt();
-    System.out.println("Ingrese contraseña:");
-    this.Contrasenia = entrada.next();
-
-    // Agregar administrador al ArrayList
-    admins.add(admin1);
-  }
-
-  public boolean validarAdministrador(Admin admins, int id, String contrasenia) {
-    if ((admins.Contrasenia == contrasenia) & (admins.id == id)) {
-      System.out.println("Ingreso Exitoso");
-      return true;
+    // Constructores
+    public Admin() {
+        this.Nombres = "";
+        this.id = 1;
+        this.Contrasenia = "a";
     }
-    return false;
-  }
 
-  public int agregarUsuario(ArrayList<Usuario> usuarios) {
-    int i;
-    Usuario usuarioNuevo = new Usuario();
-    usuarioNuevo.CrearUsuario();
-    for (i = 0; i <= usuarios.size(); i++) {
-      if (usuarios.get(i) == null) {
-        usuarios.add(usuarioNuevo);
-        return 1;
-      }
+    // Geters y setters
+    public String getNombres() {
+        return Nombres;
     }
-    return 0;
-  }
+    public void setNombres(String nombres) {
+        Nombres = nombres;
+    }
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public String getContrasenia() {
+        return this.Contrasenia;
+    }
+    public void setContrasenia(String contrasenia) {
+        this.Contrasenia = contrasenia;
+    }
 
-  // Geters y setters
-  public String getNombres() {
-    return Nombres;
-  }
+    //Comportamientos
+    public void CrearAdmin() {
+        String contrasenia, nombre;
+        int ID, flag=0;
 
-  public void setNombres(String nombres) {
-    Nombres = nombres;
-  }
+        //Valdiacion de formato de datos
+        System.out.print("Inserte nombre de administrador: ");
+        nombre = entrada.nextLine();
+        while(!nombre.matches("[a-zA-Z]+([ '][a-zA-Z]+)*")){
+            System.out.println("El dato es incorrecto, debe recibir solo letras minusculas o mayusculas");
+            System.out.print("Inserte nombre de administrador: ");
+            nombre = entrada.nextLine();
+        }
 
-  public int getId() {
-    return id;
-  }
+        do{
+            System.out.print("Ingrese ID: ");
+            ID = entrada.nextInt();
 
-  public void setId(int id) {
-    this.id = id;
-  }
+            //Valdiacion de formato de datos
+            if(ID>0){
+                flag = 1;   //Formato del ID correcto
+            }
+            else {
+                System.out.println("Formato del identificador incorrecto");
+            }
+        }while(flag==0);
 
-  public String getContrasenia() {
-    return this.Contrasenia;
-  }
+        System.out.print("Ingrese contraseña:");
+        contrasenia = entrada.next();
+        while(!contrasenia.matches("[a-zA-Z]*")){
+            System.out.println("El dato es incorrecto, debe recibir solo letras minusculas o mayusculas");
+            System.out.print("Ingrese contraseña:");
+            contrasenia = entrada.next();
+        }
 
-  public void setContrasenia(String contrasenia) {
-    this.Contrasenia = contrasenia;
-  }
+        this.Nombres = nombre;
+        this.id = ID;
+        this.Contrasenia = contrasenia;
+    }
+    public void mostrarPuntosReciclaje(ArrayList<PuntoReciclaje>puntos){
+        PuntoReciclaje ptoReciclaje = new PuntoReciclaje();
+        for(int i= 0 ; i< puntos.size() ; i ++) {
+            ptoReciclaje.MostrarPtoReciclaje(puntos, i);
+        }
+    }
+    public void agregarAdmin(ArrayList<Admin> admins) {
+        Admin adminNuevo = new Admin();
+        adminNuevo.CrearAdmin();
+        admins.add(adminNuevo);
+        System.out.println("Se agrego exitosamente...");
+    }
+    public void agregarPuntosReciclaje(ArrayList<PuntoReciclaje>ptos)
+    {
+        PuntoReciclaje ptoNuevo = new PuntoReciclaje() ;
+        ptoNuevo.CrearPuntoReciclaje();
+        ptos.add(ptoNuevo);
+        System.out.print("Se agrego exitosamente...");
+    }
+    public void agregarNoticia(ArrayList<Noticias> ListaNoticias){
+        Noticias noticia = new Noticias();
+        noticia.CrearNoticia();
+        ListaNoticias.add(noticia);
+        System.out.print("Se agrego exitosamente...");
+    }
 }
