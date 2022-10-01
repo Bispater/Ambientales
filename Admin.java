@@ -66,7 +66,8 @@ public class Admin {
         System.out.print("Ingrese contraseña:");
         contrasenia = entrada.next();
         while(!contrasenia.matches("[a-zA-Z]*")){
-            System.out.println("El dato es incorrecto, debe recibir solo letras minusculas o mayusculas");
+          System.out.println("El dato es incorrecto, debe escribir solo letras minusculas o mayusculas con nombre y apellido");
+
             System.out.print("Ingrese contraseña:");
             contrasenia = entrada.next();
         }
